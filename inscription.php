@@ -9,12 +9,12 @@ include 'includes/haut.php';
 	
 	if(isset($_POST["pseudo"])&&isset($_POST["mail"])&&isset($_POST["mdp1"])&&isset($_POST["mdp2"])&&isset($_POST["age"])&&isset($_POST["sexe"])) //on vérifie que tout les champs soit remplis
 	{
-		$mail=mysql_real_escape_string($_POST["mail"]);
+		$mail=$_POST["mail"];
 		$age=$_POST["age"];
 		$sexe=$_POST["sexe"];
 		$mdp1=$_POST["mdp1"]; //on renomme le tout
 		$mdp2=$_POST["mdp2"];
-		$pseudo=mysql_real_escape_string($_POST["pseudo"]);
+		$pseudo=$_POST["pseudo"];
 		$erreur="Erreur : <br>";	
 		$sql = 'SELECT *  FROM membres WHERE pseudo="'.$pseudo.'"';  // on check si les pseudo n'est pas déjà dans la bdd
 	
