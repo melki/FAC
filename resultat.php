@@ -46,7 +46,7 @@ include 'includes/fonctions.php';
 										
 										for($j=1;$j<=$datab['nb_choix'];$j++) 
 										{
-											$question[$i][$j]=$datab['choix'.$j];	
+											$question[$i][$j]=stripslashes($datab['choix'.$j]);	
 											
 										}	
 									}	
@@ -120,17 +120,17 @@ include 'includes/fonctions.php';
 						
 						//on se debrouille maintenant pour diviser $reponse i j par le nombre de fois que la question i a été répondue.
 						// il ne faut pas diviser les reponses de type input
-						echo '<h1>'.$titre.'</h1>';
+						echo '<h1>'.$titre.' ('.max($nb_rempli).' réponse(s))</h1>';
 						for($i=1;$i<=$nb_question;$i++)
 						{
 							
-							echo '<h2>'.$titre_question[$i].'</h2>';
+							echo '<h2>'.$titre_question[$i].' </h2>';
 
 							if ($nb_choix[$i]!=0) {
 								for($j=1;$j<=$nb_choix[$i];$j++)
 								{
 									$reponse[$i][$j]=round($reponse[$i][$j]*100/$nb_rempli[$i]);
-									echo ''.$question[$i][$j].'<br> <div class="pourcent">'.$reponse[$i][$j].'% </div><img src="rectangle.php?pourcentage='.$reponse[$i][$j].'"><br>';
+									echo ''.$question[$i][$j].'<br> <div class="pourcent">'.$reponse[$i][$j].'% </div><img  src="rectangle.php?pourcentage='.$reponse[$i][$j].'" alt="pourcentage"><br>';
 								}
 
 							}
@@ -171,7 +171,7 @@ include 'includes/fonctions.php';
 							while ($data2 = reqfetch($req2)) 
 							{
 								
-								echo '<button onclick="window.location=\'resultat.php?id='.$data['id'].'\';" >'.$data['titre'].'</br><span class="petit">
+								echo '<button onclick="window.location=\'resultat.php?id='.$data['id'].'\';" >'.$data['titre'].' ('.$data['nb_rempli'].')</br><span class="petit">
 								proposé par '.$data2['pseudo'].' </span></button>';
 							}
 						}		
@@ -221,7 +221,7 @@ include 'includes/fonctions.php';
 						<input type="text" name="pseudo" placeholder="Ton pseudo " required="">
 							<input type="password" name="mdp" placeholder="Mot de passe" required="">
 							<button type="submit">Connexion</button>
-							<a href="inscription.php"class="inscritToi">(pas encore inscris ?)</a>
+							<a href="inscription.php" class="inscritToi">(pas encore inscris ?)</a>
 		 
 					</form>
 				</div>

@@ -16,7 +16,26 @@ include 'includes/menu.php';
 							$req2 = requete($sql2);	
 							while ($data2 = reqfetch($req2)) 
 							{
-								echo '<a href="liste_sondages.php?id='.$data['id'].'"><li>'.$data['titre'].' ('.$data['date'].')</li></a>';
+								echo '<a href="liste_sondages.php?id='.$data['id'].'"><li>'.$data['titre'].' ('.$data['date'].' par '.$data2['pseudo'].')</li></a>';
+								
+							}
+						}		
+				?>
+				</ul>
+				<span class="bandeau" > Dernières réponses </span></br>	
+				
+				<ul>
+				
+					<?php
+						$sql = 'SELECT *  FROM reponse ORDER BY id DESC LIMIT 0,3';  
+						$req = requete($sql);	
+						while ($data = reqfetch($req)) 
+						{
+							$sql2 = 'SELECT *  FROM sondages WHERE id='.$data['id_sondage'];  
+							$req2 = requete($sql2);	
+							while ($data2 = reqfetch($req2)) 
+							{
+								echo '<a href="resultat.php?id='.$data2['id'].'"><li>'.$data2['titre'].'</li></a>';
 								
 							}
 						}		

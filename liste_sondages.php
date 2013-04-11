@@ -12,7 +12,7 @@ include 'includes/fonctions.php';
 				<?php
 					if(isset($_GET['id']))
 					{
-					
+						//si on l'id on recupere les infos sur le sondage 
 						echo "<input id='id' name='sondage_id' value='".$_GET['id']."' type='hidden'>";
 						$sql = 'SELECT *  FROM sondages WHERE id = "'.$_GET['id'].'"';  
 						$req = requete($sql);	
@@ -39,7 +39,7 @@ include 'includes/fonctions.php';
 									
 										for($k=1;$k<=$choix['nb_choix'];$k++)
 										{
-											echo "<input id='check".$k.$question['numero']."' type='checkbox' name='reponse".$question['numero']."[]' value='".$choix['choix'.$k]."'  >";
+											echo '<input id="check'.$k.$question["numero"].'"" type="checkbox" name="reponse'.$question["numero"].'[]" value="'.addslashes($choix["choix".$k]).'"  >';
 											echo "<label for='check".$k.$question['numero']."'>".$choix['choix'.$k]."</label><br><br>";
 										}
 									}
@@ -61,7 +61,7 @@ include 'includes/fonctions.php';
 									
 										for($k=1;$k<=$choix['nb_choix'];$k++)
 										{
-											echo"<option selected value='".$choix['choix'.$k]."'>".$choix['choix'.$k]."</option>";
+											echo'<option selected value="'.addslashes($choix["choix".$k]).'">'.$choix['choix'.$k].'</option>';
 										}	
 									
 										echo "<option selected disabled>Cliquez ici pour affichez les choix</option> ";

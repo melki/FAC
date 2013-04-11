@@ -41,8 +41,8 @@
 						contenu = contenu + "<div id=question'"+i+"'> <input type='text' name='titreQuestion"+i+"' placeholder='La question "+i+"' required=''>"+
 						"<div class='styled-select'>"+
 						"<select name='typeQuestion"+i+"' id='typeQuestion"+i+"' onchange='affType("+i+")'>"+
-						"<option value='1'>Choix multiple</option>"+
-						"<option value='2'>Choix unique</option>"+
+						"<option value='1'>Choix multiple (cases à cocher)</option>"+
+						"<option value='2'>Choix unique (liste déroulante)</option>"+
 						"<option value='3'>Réponse écrite</option>"+
 						"<option selected disabled>Type de la question</option> </select> </div><div id='type"+i+"'></div></div>";
 						contenu= contenu + "<br>";

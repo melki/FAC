@@ -10,6 +10,6 @@
 				</ul>
 			</div>
 			<div class="logo">
-				<img src="img/logo1.png"/>
+				<a href="index.php"><img src="img/logo1.png" alt="logo"/></a>
 			</div>
 		</div>

@@ -40,7 +40,7 @@ include 'includes/haut.php';
 		if($erreur=="Erreur : <br>") // on inscris le bonhomme
 		{
 			$mdp=crypt($mdp1);
-			$sql = 'INSERT INTO membres VALUES ("", "'.$pseudo.'","'.$mdp.'", 0, 0, "'.$mail.'","'.$age.'","'.$sexe.'")'; 
+			$sql = 'INSERT INTO membres VALUES ("", "'.$pseudo.'","'.$mdp.'", 0, 0, "'.$mail.'","'.$age.'","'.$sexe.'","")'; 
 			$req = requete($sql); 				
 			$erreur="Bravo te voilà inscris, tu peux désormais te connecter via la page d'accueil : <a href='index.php'>ici</a>";	
 		}
