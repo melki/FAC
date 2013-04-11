@@ -77,7 +77,7 @@ include 'includes/fonctions.php';
 							{	
 								$titreQuestion[$i]=$_POST['titreQuestion'.$i];	
 								$typeQuestion[$i]=$_POST['typeQuestion'.$i];	
-								// puis chacune des quastions
+								// puis chacune des questions
 								$sql = 'INSERT INTO question VALUES ("", "'.$id_sondage.'","'.$i.'", "'.$typeQuestion[$i].'", "'.$titreQuestion[$i].'")'; 
 								$req = requete($sql);
 								
