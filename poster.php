@@ -104,7 +104,7 @@ include 'includes/fonctions.php';
 										$choix[$i][$j]="a";
 									}
 
-								// et enfin chaque choix pour chaque question (si il y a des choix)
+								// et enfin chaque choix pour chaque question (s'il y a des choix)
 								$sql = 'INSERT INTO multiple VALUES ("", "'.$id_question.'","'.$n2.'", "'.$choix[$i][1].'", "'.$choix[$i][2].'", "'.$choix[$i][3].'", "'.$choix[$i][4].'", "'.$choix[$i][5].'", "'.$choix[$i][6].'", "'.$choix[$i][7].'", "'.$choix[$i][8].'", "'.$choix[$i][9].'", "'.$choix[$i][10].'")'; 
 								$req = requete($sql);
 								}	
